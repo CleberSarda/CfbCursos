@@ -10,7 +10,6 @@ class Login{
         cor:null,
         img:null,
         endpoint:null,
-    
     };
     static login=(callback_ok,callback_naook,config)=>{
         this.config=config;
@@ -26,7 +25,7 @@ class Login{
         ".logoLogin img{width: 90%;box-sizing: inherit;}"+
         ".campoLogin{display: flex;justify-content: flex-start;align-items: flex-start;flex-direction: column;box-sizing: inherit;}"+
         ".botoesLogin{display: flex;justify-content: space-around;align-items: center;width: 100%;box-sizing: inherit;}"+
-       `.botoesLogin button{cursor: pointer;background-color:#${this.config.cor};color: #fff;border-radius: 5px;padding: 10px;width: 100px;box-sizing: inherit;}`
+       `.botoesLogin button{cursor: pointer;background-color:${this.config.cor};color: #fff;border-radius: 5px;padding: 10px;width: 100px;box-sizing: inherit;}`
 
         const styleEstilo=document.createElement("style");
         styleEstilo.setAttribute("id","id_estiloLogin");

@@ -16,8 +16,8 @@ const callback_naook=()=>{
 }
 
 const configlogin={
-    cor:"048",
+    cor:"#048",
     img:"logo.png",
     endpoint:"http://192.168.2.107:8080"
 }
-Login.login(callback_naook,configlogin);
+Login.login(callback_ok,callback_naook,configlogin);
