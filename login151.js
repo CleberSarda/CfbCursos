@@ -7,17 +7,15 @@ class Login{
     static callback_ok=null;
     static callback_naook=null;
     static config={
-        cor:"048",
-        img:"logo.png"
+        cor:null,
+        img:null,
+        endpoint:null,
+    
     };
-    static endpoint="http://192.168.2.107:8080/";
-
-    static login=(callback_ok,callback_naook,config=null)=>{
-        if(config!=null){
-            this.config=config;
-        }
-        this.callback_ok=callback_ok;
-        this.callback_naook=callback_naook;
+    static login=(callback_ok,callback_naook,config)=>{
+        this.config=config;
+        this.callback_ok=()=>{callback_ok()};
+        this.callback_naook=()=>{callback_naook()};
         this.estilocss=
         ".fundoLogin{display: flex;justify-content: center;align-items: center; width: 100%;height: 100vh;position: absolute;top: 0px;left: 0px;  background-color: rgba(0,0,0,.75);box-sizing: border-box;}"+
         ".baseLogin{display: flex;justify-content: center;align-items: stretch; width: 50%;box-sizing: inherit;}"+
@@ -121,22 +119,22 @@ class Login{
         const mat=document.querySelector("#f_username").value;
         const pas=document.querySelector("#f_senha").value;
 
-        const andpoint=`http://192.168.2.107:8080/?matricula=${mat}&senha=${pas}`;
+        const andpoint=`${this.config.endpoint}/?matricula=${mat}&senha=${pas}`;
         fetch(andpoint)
         .then(res=>res.json())
         .then(res=>{
-            if(res && res.nome){
-                this.logado=true;
-                this.matlogado=mat;
-                this.nomelogado=res.nome;
-                this.acessologado=res.acesso;
+            if(res){
+                sessionStorage.setItem("logado","true");
+                sessionStorage.setItem("matlogado",mat);
+                sessionStorage.setItem("nomelogado",res.nome);
+                sessionStorage.setItem("acessologado",res.acesso);
                 this.callback_ok();
                 this.fechar();
             }else{
-                this.logado=false;
-                this.matlogado=null;
-                this.nomelogado=null;
-                this.acessologado=null;
+                sessionStorage.setItem("logado","false");
+                sessionStorage.setItem("matlogado","");
+                sessionStorage.setItem("nomelogado","");
+                sessionStorage.setItem("acessologado","");
                 this.callback_naook();
             }
         })
@@ -150,4 +148,4 @@ class Login{
 }
 
 
-export {Login};
+//export {Login};
