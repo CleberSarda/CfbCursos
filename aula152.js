@@ -19,7 +19,7 @@ const dgv=(configdgv)=>{
             const c2=document.createElement("div");
             c2.setAttribute("class","c2");
             c2.innerHTML=el.produto;
-            dgvLinha.appendChild(c1);
+            dgvLinha.appendChild(c2);
 
             const c3=document.createElement("div");
             c3.setAttribute("class","c3");
@@ -38,7 +38,6 @@ const dgv=(configdgv)=>{
 
             dgvDados.appendChild(dgvLinha);
         });
-            console.log(res)
     })
 }
 
