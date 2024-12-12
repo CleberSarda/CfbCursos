@@ -34,6 +34,18 @@
     align-self: flex-start;
     flex-direction: row;
 }
+.dgvLinha:nth-child(odd){
+    background-color: #ddd;
+}
+.dgvLinha:nth-child(even){
+    background-color: #eee;
+    
+}
+.dgvLinha:hover{
+    background-color: #088 !important;
+    color: #fff !important;
+    cursor: pointer;
+}
 .c1{
     width: 50px;
 }
