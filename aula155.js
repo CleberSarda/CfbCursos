@@ -55,7 +55,7 @@ const dgv=(configdgv)=>{
                         linha.remove();
                     }
                 })
-            })
+            });
             c5.appendChild(imgdelete);
 
             const imgEditar=document.createElement("img");
@@ -66,6 +66,10 @@ const dgv=(configdgv)=>{
             const imgExibir=document.createElement("img");
             imgExibir.setAttribute("class","dgvIcone");
             imgExibir.setAttribute("src","exibir.svg");
+            imgExibir.addEventListener("click",(evt)=>{
+                const id=evt.target.parentNode.parentNode.firstChild.innerHTML;
+                const endpoint=`http://127.0.0.1:8080/exibirprodutos/${id}`;
+            });
             c5.appendChild(imgExibir);
 
             dgvDados.appendChild(dgvLinha);
