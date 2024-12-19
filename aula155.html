@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="estilos155.css">
 </head>
 <body>
+    <div id="cabecalho" class="cabecalho">
+        <h1 id="titulo_tela" class="titulo_tela">Tela de Produtos</h1>
+        <button id="btn_incluir" class="btn_incluir">Incluir</button>
+    </div>
     <div id="dgvProdutos" class="dgv">
         <div id="dgvTitulos" class="dgvTitulos">
             <div class="c1">ID</div>
@@ -41,6 +45,7 @@
             </div>
         </div>
     </div>
+
     <div id="janelaEditar" class="janelaView ocultar">
         <div id="vieweditar" class="view">
             <div class="campo">
@@ -58,6 +63,30 @@
             <div class="campo">
                 <label>Modelo</label>
                 <input type="text" name="f_modeloeditar" id="f_modeloeditar">
+            </div>
+            <div id="rodape" class="rodape campo">
+                <button id="btn_gravar" class="btn">Gravar</button>
+                <button id="btn_cancelar" class="btn">Cancelar</button>
+            </div>
+        </div>
+
+    <div id="janelaIncluir" class="janelaView ocultar">
+        <div id="viewIncluir" class="view">
+            <div class="campo">
+                <label>ID</label>
+                <input type="text" name="f_idIncluir" id="f_idIncluir" readonly>
+            </div>
+            <div class="campo">
+                <label>Produto</label>
+                <input type="text" name="f_produtoIncluir" id="f_produtoIncluir">
+            </div>
+            <div class="campo">
+                <label>Marca</label>
+                <input type="text" name="f_marcaIncluir" id="f_marcaIncluir">
+            </div>
+            <div class="campo">
+                <label>Modelo</label>
+                <input type="text" name="f_modeloIncluir" id="f_modeloIncluir">
             </div>
             <div id="rodape" class="rodape campo">
                 <button id="btn_gravar" class="btn">Gravar</button>
