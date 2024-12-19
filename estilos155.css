@@ -109,7 +109,9 @@
     width: 100%;
 }
 .rodape{
+    flex-direction: row !important;
     align-items: center;
+    justify-content: center !important;
 }
 .btn{
     background-color: #480;
@@ -118,6 +120,7 @@
     cursor: pointer;
     padding: 10px 50px;
     border-radius: 5px;
+    margin: 5px;
 }
 .ocultar{
     display: none !important;
