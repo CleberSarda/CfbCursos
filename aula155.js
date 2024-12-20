@@ -42,6 +42,7 @@ const dgv=(configdgv)=>{
             c5.setAttribute("class","coluna c5");
             dgvLinha.appendChild(c5);
 
+
             const imgdelete=document.createElement("img");
             imgdelete.setAttribute("class","dgvIcone");
             imgdelete.setAttribute("src","delete.svg");
@@ -99,6 +100,7 @@ const dgv=(configdgv)=>{
 
             dgvDados.appendChild(dgvLinha);
         });
+
     })
 }
 
@@ -123,9 +125,7 @@ document.querySelector("#btn_gravar").addEventListener("click",(evt)=>{
         }else{
             alert("Erro ao Atualizar");
         }
-    })
-
-    
+    })    
 });
 
 document.querySelector("#btn_cancelar").addEventListener("click",(evt)=>{
