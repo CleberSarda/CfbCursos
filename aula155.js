@@ -100,7 +100,11 @@ const dgv=(configdgv)=>{
 
             dgvDados.appendChild(dgvLinha);
         });
+        const btn_incluir=document.querySelector("#btn_incluir");
+        btn_incluir.addEventListener("click",(evt)=>{
+            document.querySelector("#janelaIncluir").classList.remove("ocultar");
 
+        })
     })
 }
 
@@ -130,4 +134,26 @@ document.querySelector("#btn_gravar").addEventListener("click",(evt)=>{
 
 document.querySelector("#btn_cancelar").addEventListener("click",(evt)=>{
     document.querySelector("#janelaEditar").classList.add("ocultar");
+});
+
+document.querySelector("#btn_Incluir").addEventListener("click",(evt)=>{
+    document.querySelector("#janelaIncluir").classList.add("ocultar");
+    const id=document.querySelector("#f_idIncluir").value;
+    const produto=document.querySelector("#f_produtoIncluir").value;
+    const marca=document.querySelector("#f_marcaIncluir").value;
+    const modelo=document.querySelector("#f_modeloIncluir").value;
+    const endpoint=`http://127.0.0.1:8080/insertproduto/${produto}/${marca}/${modelo}`;
+    fetch(endpoint)
+    .then(res=>{
+        if(res.status==200){
+            document.querySelector("#janelaIncluir").classList.add("ocultar");
+            dgv(configdgv);
+        }else{
+            alert("Erro ao Incluir");
+        }
+    })    
+});
+
+document.querySelector("#btn_desfazer").addEventListener("click",(evt)=>{
+    document.querySelector("#janelaIncluir").classList.add("ocultar");
 });
