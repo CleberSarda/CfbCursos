@@ -19,10 +19,10 @@ btn_pesquisar.addEventListener("click",(evt)=>{
     window.open("./pesquisar.html","if_principal");
 });
 
-btn_sobre.addEventListener("click",(evt)=>{
+btn_gestao.addEventListener("click",(evt)=>{
     window.open("./gestao.html","if_principal");
 });
     
-principal.addEventListener("click",(evt)=>{
+btn_sobre.addEventListener("click",(evt)=>{
     window.open("./sobre.html","if_principal");
 });
