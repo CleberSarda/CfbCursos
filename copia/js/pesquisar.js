@@ -46,16 +46,7 @@ btn_pesq.addEventListener("click",(evt)=>{
 
             const c6=document.createElement("div");
             c6.setAttribute("class","coluna c6");
-            if (el.d_dtnasc_contatos) {
-                const data = new Date(el.d_dtnasc_contatos);
-                const dia = String(data.getDate()).padStart(2, '0');
-                const mes = String(data.getMonth() + 1).padStart(2, '0'); // Meses começam do 0
-                const ano = data.getFullYear();
-                c6.innerHTML = `${dia}/${mes}/${ano}`;
-            } else {
-                c6.innerHTML = "N/A"; // Caso a data esteja vazia
-            }
-            
+            c6.innerHTML=el.d_dtnasc_contatos;
             linha.appendChild(c6);
 
             dados.appendChild(linha);
