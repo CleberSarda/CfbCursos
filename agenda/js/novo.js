@@ -1,10 +1,10 @@
-const btngravar=document.querySelector("#btngravar")
-const btn_cancelar=document.querySelector("#btn_cancelar")
-const f_nome=document.querySelector("#f_nome")
-const f_celular=document.querySelector("#f_celular")
-const f_celprof=document.querySelector("#f_celprof")
-const f_email=document.querySelector("#f_email")
-const f_dtnasc=document.querySelector("#f_dtnasc")
+const btngravar=document.querySelector("#btngravar");
+const btn_cancelar=document.querySelector("#btn_cancelar");
+const f_nome=document.querySelector("#f_nome");
+const f_celular=document.querySelector("#f_celular");
+const f_celprof=document.querySelector("#f_celprof");
+const f_email=document.querySelector("#f_email");
+const f_dtnasc=document.querySelector("#f_dtnasc");
 
 btngravar.addEventListener("click",(evt)=>{
     const dados={
@@ -15,6 +15,7 @@ btngravar.addEventListener("click",(evt)=>{
         "f_dtnasc":f_dtnasc.value
     }
 
+
     const cabecalho={
         method:'POST',
         body:JSON.stringify(dados)
@@ -24,12 +25,16 @@ btngravar.addEventListener("click",(evt)=>{
     fetch(endpoint,cabecalho)
     .then(res=>{
         if(res.status==200){
+            console.log("OK")
             reset();
+
         }else{
-            alert("Erro ao gravar novo contato");
+            alert("Erro ao gravar contato");
         }
     })
 });
+    
+
 
 btn_cancelar.addEventListener("click",(evt)=>{
     reset();
