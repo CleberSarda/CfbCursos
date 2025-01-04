@@ -10,28 +10,12 @@ const f_celular=document.querySelector("#f_celular");
 const f_celprof=document.querySelector("#f_celprof");
 const f_email=document.querySelector("#f_email");
 const f_dtnasc=document.querySelector("#f_dtnasc");
+const btn_filtrar=document.querySelector("#btn_filtrar");
+const f_filtronome=document.querySelector("#f_filtronome");
 
-btnGravar.addEventListener("click",(evt)=>{
-    fundopopup.classList.add("ocultar");
-    const endpoint=`http://127.0.0.1:8080/atualizarcontatos/${f_id.value}/${f_nome.value}/${f_celular.value}/${ f_celprof.value}/${f_email.value}/${f_dtnasc.value}`
-    fetch(endpoint)
-    .then(res=>{
-        if(res.status==200){
-            preencherdgv();
-        }else{
-            alert("Erro");
-        }
-    })
-});
-
-
-btnCancelar.addEventListener("click",(evt)=>{
-    fundopopup.classList.add("ocultar");
-});
-
-const preencherdgv=()=>{
+const preencherdgv=(endpoint)=>{
     dados.innerHTML="";
-    const endpoint=`http://127.0.0.1:8080/pesquisartodoscontatos`;
+    //const endpoint=`http://127.0.0.1:8080/pesquisartodoscontatos`;
     fetch(endpoint)
     .then(res=>res.json())
     .then(res=>{
@@ -108,8 +92,16 @@ const removerContato=(id)=>{
     fetch(endpoint)
     .then(res=>{
         if(res.status==200){
-            preencherdgv();
+            preencherdgv("http://127.0.0.1:8080/pesquisartodoscontatos");
         }
     })
 }
+
+btn_filtrar.addEventListener("click", (evt)=>{
+    if(f_filtronome.value==""){
+        preencherdgv("http://127.0.0.1:8080/pesquisartodoscontatos");
+    }else{
+        preencherdgv(`http://127.0.0.1:8080/filtrar/${f_filtronome.value}`);
+    }
+});
 

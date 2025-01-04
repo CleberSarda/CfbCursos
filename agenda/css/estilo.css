@@ -4,6 +4,13 @@
     margin: 0px;
     box-sizing: border-box;
 }
+
+/****AUXILIARES*****/
+.ocultar{
+    display: none !important;
+}
+
+/*******************/
 .cabecalho{
     display: flex;
     justify-content: center;
@@ -235,7 +242,18 @@ label{
     justify-content: space-around;
     align-items: center;
  }
-  
+ 
+ /*  GESTÂO */
+
+ .iconeop{
+    width: 30%;
+    cursor: pointer;
+ }
+ .iconeopfiltro{
+    width: 40px;
+    cursor: pointer;
+ }
+
  /********POPPUP ESDITAR********/
 
  .fundopopup{
@@ -248,7 +266,48 @@ label{
     position: fixed;
     top: 0px;
     left: 0px;
+    z-index: 999999999;
  }
  .janelapopup{
-
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 500px;
+    
  }
+ .titulopopup{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #248;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;
+    width: inherit;
+ }
+.principalpopup{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: inherit;
+    background-color: #ddd;
+    padding: 5px;
+}
+.rodapepopup{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: inherit;
+    background-color: #aaa;
+    border-radius: 0px 0px 5px 5px;
+}
+
+/* FILTRAR   */
+
+.filtro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
