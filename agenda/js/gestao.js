@@ -2,16 +2,9 @@ const btn_pesq=document.querySelector("#btn_pesq");
 const f_txtpesq=document.querySelector("#f_txtpesq");
 const dados=document.querySelector("#dados");
 
-btn_pesq.addEventListener("click",(evt)=>{
+const preencherdgv=()=>{
     dados.innerHTML="";
-    const valorpesq=f_txtpesq.value;
-    if(valorpesq==""){
-        alert("digite a pesquisa");
-        f_txtpesq.focus();
-        return;
-    }
-    const f_pesq=document.querySelector("input[name=f_pesq]:checked").value;
-    const endpoint=`http://127.0.0.1:8080/pesquisarcontatos/${f_pesq}/${valorpesq}`;
+    const endpoint=`http://127.0.0.1:8080/pesquisartodoscontatos`;
     fetch(endpoint)
     .then(res=>res.json())
     .then(res=>{
@@ -50,15 +43,9 @@ btn_pesq.addEventListener("click",(evt)=>{
             c6.innerHTML=el.d_dtnasc_contatos;
             linha.appendChild(c6);
 
-            const c7=document.createElement("div");
-            c7.setAttribute("class","coluna c7")
-            const imgdelete=document.createElement("img");
-            const imgeditar=document.createElement("img");
-            c7.appendChild(imgdelete);
-            c7.appendChild(imgeditar);
-            linha.appendChild(c7);
-
             dados.appendChild(linha);
         })
     });
-});
+};
+
+preencherdgv();
