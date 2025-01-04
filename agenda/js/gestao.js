@@ -43,9 +43,37 @@ const preencherdgv=()=>{
             c6.innerHTML=el.d_dtnasc_contatos;
             linha.appendChild(c6);
 
+            const c7=document.createElement("div");
+            c7.setAttribute("class","coluna c7 c_op")
+            const imgdelete=document.createElement("img");
+            imgdelete.setAttribute("src","img/delete.svg");
+            imgdelete.setAttribute("class","iconeop");
+            imgdelete.addEventListener("click",(evt)=>{
+                const id=evt.target.parentNode.parentNode.firstChild.innerHTML;
+                removerContato(id);
+            })
+            const imgeditar=document.createElement("img");
+            imgeditar.setAttribute("src","img/edit.svg")
+            imgeditar.setAttribute("class","iconeop");
+            c7.appendChild(imgdelete);
+            c7.appendChild(imgeditar);
+            linha.appendChild(c7);
+
+
             dados.appendChild(linha);
         })
     });
 };
 
 preencherdgv();
+
+const removerContato=(id)=>{
+    const endpoint=`http://127.0.0.1:8080/deletarcontatos/${id}`;
+    fetch(endpoint)
+    .then(res=>{
+        if(res.status==200){
+            preencherdgv();
+        }
+    })
+}
+
