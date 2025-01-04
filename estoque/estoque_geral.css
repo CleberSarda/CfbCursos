@@ -1,3 +1,9 @@
 .menuPrincipal{
     
 }
+.btn_menuPrincipal{
+    cursor: pointer;
+}
+.btn_menuItem{
+    cursor: pointer;
+}
