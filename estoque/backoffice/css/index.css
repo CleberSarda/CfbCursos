@@ -11,7 +11,7 @@
     align-items: flex-start;
     width: 240px;
     height: 100vh;
-    transform: all .2s;
+    transition: all .2s;
 }
 .ocultar{
     left: -190px !important;
