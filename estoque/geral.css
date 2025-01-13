@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    overflow: hidden;
+}
 .menuPrincipal{
     position: absolute;
     top: 0px;
